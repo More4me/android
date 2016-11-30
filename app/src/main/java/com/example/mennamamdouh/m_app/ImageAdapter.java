@@ -14,7 +14,7 @@ import java.util.ArrayList;
 /**
  * Created by Menna Mamdouh on 11/11/2016.
  */
-public class ImageAdapter extends BaseAdapter {
+public class ImageAdapter extends BaseAdapter  {
 
         ArrayList<Movie> movie;
         Context context;
@@ -39,11 +39,7 @@ public class ImageAdapter extends BaseAdapter {
         public View getView(int position, View convertView, ViewGroup parent) {
             ImageView imageView;
             if (convertView == null) {
-                // if it's not recycled, initialize some attributes
-//                imageView = new ImageView(context);
-//                imageView.setLayoutParams(new GridView.LayoutParams(85, 85));
-//                imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-//                imageView.setPadding(8, 8, 8, 8);
+
                 View view=View.inflate(context,R.layout.grid_single,null);
                 imageView = (ImageView)view.findViewById(R.id.grid_image);
 
@@ -54,4 +50,6 @@ public class ImageAdapter extends BaseAdapter {
             Log.v("fetchMovie","load img "+movie.get(position).getOriginal_title_data());
             return imageView;
         }
+
+
 }

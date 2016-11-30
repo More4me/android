@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Listview
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/customListView"
-    xmlns:android="http://schemas.android.com/apk/res/android"></Listview>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/authorName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Author">
+
+    </TextView>
+
+    <TextView
+        android:id="@+id/movie_overview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="14dp"
+        android:text="Yehia"/>
+
+
+</LinearLayout>

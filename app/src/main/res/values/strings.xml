@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">M_App</string>
     <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_display_movie_data">DisplayMovieData</string>
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="title_activity_trailer">trailer</string>
+    <string name="title_activity_review_movie">ReviewMovie</string>
+    <string name="fragment2_tag">fragment2_tag</string>
+    <string name="fragment3_tag">fragment3_tag</string>
 </resources>

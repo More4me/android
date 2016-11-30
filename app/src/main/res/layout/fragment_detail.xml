@@ -2,12 +2,90 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.example.mennamamdouh.m_app.DetailActivityFragment"
     tools:showIn="@layout/activity_detail"
-    tools:context="com.example.mennamamdouh.m_app.DetailActivityFragment">
+    android:id="@+id/fragment_detail">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/movie_title"
+        android:textAlignment="center"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/moive_picture"
+        android:layout_below="@id/movie_title"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/moive_picture"
+        android:id="@+id/movie_overview"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/movie_overview"
+        android:id="@+id/vote_average"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/released_date"
+        android:layout_marginBottom="60dp"
+        android:layout_below="@+id/movie_overview"
+        android:layout_marginLeft="50dp"
+        android:layout_toRightOf="@+id/vote_average"/>
+        <!-- -->
+    <!--<android.support.design.widget.FloatingActionButton-->
+        <!--android:id="@+id/fab"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="bottom|end"-->
+        <!--android:layout_margin="@dimen/fab_margin"-->
+        <!--android:src="@android:drawable/ic_dialog_email"-->
+        <!--/>-->
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/vote_average"
+        android:id="@+id/saveDatabase"
+        android:background="@color/colorAccent"
+        android:text="add to favourite"
+        android:layout_marginBottom="10dp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/vote_average"
+        android:layout_marginLeft="50dp"
+        android:layout_toRightOf="@+id/saveDatabase"
+        android:id="@+id/opentrailer"
+        android:background="@color/colorAccent"
+        android:text="open Trailers"
+        android:layout_marginBottom="10dp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/viewreviews"
+        android:background="@color/colorAccent"
+        android:text="view reviews"
+        android:layout_below="@id/opentrailer"/>
 
 
 </RelativeLayout>
