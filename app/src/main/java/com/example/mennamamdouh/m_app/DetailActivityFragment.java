@@ -35,20 +35,23 @@ public class DetailActivityFragment extends Fragment {
         Button button = (Button) view.findViewById(R.id.saveDatabase);
         Button trailerButton=(Button) view.findViewById(R.id.opentrailer);
         Button reviewsButton=(Button) view.findViewById(R.id.viewreviews);
+
         v1 = (TextView) view.findViewById(R.id.movie_title);
         v2 = (TextView) view.findViewById(R.id.movie_overview);
         v3 = (TextView) view.findViewById(R.id.vote_average);
         v4 = (TextView) view.findViewById(R.id.released_date);
         I1 = (ImageView) view.findViewById(R.id.moive_picture);
-
+        if(savedInstanceState!=null)
+        {
+            movie=savedInstanceState.getParcelable("MOVIE");
+            changeData(movie);
+        }
        // v1=view.findViewById(R.id.);
         boolean tablet=MainActivityFragment.isTablet(getActivity());
         if(!tablet) {
             Bundle b = getActivity().getIntent().getExtras();
 
             movie = b.getParcelable("Movie_data");
-
-
         }
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +73,7 @@ public class DetailActivityFragment extends Fragment {
                 view_review();
             }
         });
+
         return view;
     }
 
@@ -108,9 +112,14 @@ public class DetailActivityFragment extends Fragment {
 
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelable("MOVIE", movie);
+    }
+
     public void changeData(Movie movie) {
         this.movie = movie;
-
         v1.setText(movie.getOriginal_title_data());
         v2.setText(movie.getOverview_data());
         v3.setText(movie.getRelease_date_data());

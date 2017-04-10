@@ -58,18 +58,13 @@ public class MainActivityFragment extends Fragment implements Display {
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
-
                 boolean tablet=isTablet(getActivity());
                 if(!tablet) {
-
                     Intent i = new Intent(getActivity(), DetailActivity.class);
                     i.putExtra("Movie_data", movie.get(position));
-
-
                     startActivity(i);
                 }
                 else{
-
                     comm.respond(movie.get(position));
                 }
 
@@ -122,7 +117,6 @@ public class MainActivityFragment extends Fragment implements Display {
 
         if(item.getItemId()==R.id.ByPopularity)
         {
-
             fetchMovie f=new fetchMovie(this);
             f.execute("popular");
             return true;
@@ -136,8 +130,8 @@ public class MainActivityFragment extends Fragment implements Display {
 
         else if (item.getItemId() == R.id.favorite){
             FavouriteDatabaseHelper databaseHelper = new FavouriteDatabaseHelper(getActivity());
-            ArrayList<Movie> list = databaseHelper.getAllMovies();
-            gridview.setAdapter(new ImageAdapter(list,getActivity()));
+            movie = databaseHelper.getAllMovies();
+            gridview.setAdapter(new ImageAdapter(movie,getActivity()));
         }
         return super.onOptionsItemSelected(item);
     }
